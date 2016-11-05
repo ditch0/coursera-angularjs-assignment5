@@ -1,0 +1,36 @@
+<div class="container">
+    <h2 class="text-center">My Info</h2>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <p ng-if="userInfoCtrl.user == null" class="text-center">
+                Not Signed Up Yet. <a ui-sref="public.sign-up">Sign up Now!</a>
+            </p>
+            <div ng-if="userInfoCtrl.user != null">
+                <p>
+                    <strong>First name:</strong>
+                    {{userInfoCtrl.user.firstName}}
+                </p>
+                <p>
+                    <strong>Last name:</strong>
+                    {{userInfoCtrl.user.lastName}}
+                </p>
+                <p>
+                    <strong>Email:</strong>
+                    {{userInfoCtrl.user.email}}
+                </p>
+                <p>
+                    <strong>Phone number:</strong>
+                    {{userInfoCtrl.user.email}}
+                </p>
+                <p>
+                    <strong>Favorite dish:</strong>
+                    {{userInfoCtrl.menuItem.name}}
+                </p>
+                <p>{{userInfoCtrl.menuItem.description}}</p>
+                <p>
+                    <img class="img-responsive" width="250" height="150" ng-src="{{userInfoCtrl.basePath}}/images/{{userInfoCtrl.menuItem.short_name}}.jpg" alt="{{userInfoCtrl.menuItem.name}}">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
